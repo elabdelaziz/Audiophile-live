@@ -3,7 +3,6 @@ import Button from "../components/Button";
 import ProductsCategories from "../components/ProductsCategories";
 
 const HomeScreen = (props) => {
-  console.log(process.env);
   return (
     <Fragment>
       <div className="bg-black text-white">
@@ -49,7 +48,7 @@ const HomeScreen = (props) => {
           // style={{
           //   backgroundImage: `url(/assets/home/desktop/image-speaker-zx7.jpg)`,
           // }}
-          className="bg-cover bg-right container mx-auto rounded-xl h-[22rem] lg:pl-[10rem] flex flex-col justify-center lg:items-start items-center"
+          className="bg-cover bg-[url('/assets/home/desktop/image-speaker-zx7.jpg')] bg-right container mx-auto rounded-xl h-[22rem] lg:pl-[10rem] flex flex-col justify-center lg:items-start items-center"
         >
           <h2 className="text-[2rem]">ZX7 SPEAKER</h2>
           <Button
