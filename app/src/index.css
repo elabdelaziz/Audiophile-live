@@ -12,7 +12,7 @@ body {
   padding-top: 2rem;
 }
 
-header nav a:hover {
+ul li a:hover {
   color: #d87d4a;
   transition: 0.3s;
 }
@@ -35,4 +35,20 @@ code {
 
 .pattern-circles-position {
   background-position: -125px -154px;
+}
+
+.section-container {
+  margin-left: 2.5em;
+  margin-right: 2.5em;
+}
+
+section {
+  margin-top: 15rem;
+  margin-bottom: 15rem;
+}
+
+@media only screen and (min-width: 1025px) {
+  .reverser:nth-of-type(2) {
+    flex-direction: initial;
+  }
 }

@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import BestAudioGear from "../components/BestAudioGear";
 import Button from "../components/Button";
 import ProductsCategories from "../components/ProductsCategories";
 
@@ -24,8 +25,8 @@ const HomeScreen = (props) => {
         </div>
       </div>
       <ProductsCategories />
-      <section>
-        <div className="grid grid-cols-1 lg:grid-cols-2 bg-bottom container mx-auto justify-items-center items-center bg-midOrange bg-pattern-circles lg:pattern-circles-position bg-no-repeat bg-[3rem_1rem] rounded-xl text-center lg:text-left py-[55px] lg:py-[20px] mb-6 md:mb-8 lg:mb-12 overflow-hidden">
+      <section className="container mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 bg-bottom container mx-auto justify-items-center items-center bg-midOrange bg-pattern-circles lg:pattern-circles-position bg-no-repeat bg-[3rem_1rem] rounded-xl text-center lg:text-left py-[55px] lg:py-[20px] overflow-hidden">
           <div className="">
             <img
               className=" max-w-[180px] md:max-w-[197px] lg:max-w-[390px] lg:ml-[120px] mb-8 md:mb-16 transform lg:translate-y-24 "
@@ -43,12 +44,12 @@ const HomeScreen = (props) => {
           </div>
         </div>
       </section>
-      <section>
+      <section className="container mx-auto">
         <div
           // style={{
           //   backgroundImage: `url(/assets/home/desktop/image-speaker-zx7.jpg)`,
           // }}
-          className="bg-cover bg-[url('/assets/home/desktop/image-speaker-zx7.jpg')] bg-right container mx-auto rounded-xl h-[22rem] lg:pl-[10rem] flex flex-col justify-center lg:items-start items-center"
+          className="bg-cover bg-right bg-[url('../public/assets/home/desktop/image-speaker-zx7.jpg')] container mx-auto rounded-xl h-[22rem] lg:pl-[10rem] flex flex-col justify-center lg:items-start items-center"
         >
           <h2 className="text-[2rem]">ZX7 SPEAKER</h2>
           <Button
@@ -58,14 +59,28 @@ const HomeScreen = (props) => {
           />
         </div>
       </section>
-      {/* <section>
-        <div>
-          <div>
-            <img src="/assets/home/desktop/" alt=""></img>
+      <section className="">
+        <div className="flex flex-col lg:flex-row lg:justify-center gap-8 items-center mx-[1rem] overflow-hidden lg:max-h-[300px]">
+          <div className="rounded-xl overflow-hidden lg:max-w-[523px] lg:max-h-[300px]">
+            <img
+              className=""
+              src="/assets/home/desktop/image-earphones-yx1.jpg"
+              alt=""
+            ></img>
           </div>
-          <div></div>
+          <div className="flex flex-col w-full lg:w-[40%] pt-8 rounded-xl max-w-[540px] lg:m-0 items-center lg:items-start lg:p-0 lg:justify-center lg:pl-[2rem] justify-start h-[250px] lg:h-[300px] bg-nearWhite">
+            <h2 className="text-[1rem] text-center lg:text-[1.5rem] font-bold">
+              YX1 WIRELESS EARPHONES
+            </h2>
+            <Button
+              additional="border border-black border-solid mt-4"
+              background="bg-transparent"
+              color="text-black"
+            />
+          </div>
         </div>
-      </section> */}
+      </section>
+      <BestAudioGear />
     </Fragment>
   );
 };

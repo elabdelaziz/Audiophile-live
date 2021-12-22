@@ -5,7 +5,7 @@ module.exports = {
       sans: ["Manrope", "sans-serif"],
     },
     container: {
-      padding: "2rem",
+      padding: "1rem",
     },
     heroContainer: {
       padding: "1rem",
@@ -30,9 +30,12 @@ module.exports = {
         "pattern-circles":
           "url('../public/assets/home/desktop/pattern-circles.svg')",
       }),
-      section: {
-        paddingTop: "2rem",
+      margin: {
+        mainMargin: "10rem",
       },
+      // section: {
+      //   paddingTop: "2rem",
+      // },
     },
   },
   plugins: [],
