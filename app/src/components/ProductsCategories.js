@@ -8,7 +8,8 @@ const ProductsCategories = (props) => {
   const dispatch = useDispatch();
   const categoryList = useSelector((state) => state.categoryList);
   const { loading, error, categories } = categoryList;
-  console.log(categories);
+  // console.log(categoryList);
+  // console.log(categories);
   useEffect(() => {
     dispatch(listCategories());
   }, [dispatch]);

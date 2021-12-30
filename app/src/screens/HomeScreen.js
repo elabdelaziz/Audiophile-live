@@ -12,7 +12,7 @@ const HomeScreen = (props) => {
             <h5 className="overline-text inline-block mb-4 md:mb-6 text-stone-300 text-lg tracking-custom1">
               NEW PRODUCT
             </h5>
-            <h2 className="h2 md:h1 mb-6 md:text-xl">
+            <h2 className="h2 md:h1 mb-6 md:text-[2.5rem]">
               XX99 MARK II HEADPHONES
             </h2>
             <p className="mb-[28px] md:mb-10 text-xs md:text-base text-stone-500">

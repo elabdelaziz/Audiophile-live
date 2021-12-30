@@ -7,16 +7,15 @@ import LoadingBox from "../components/LoadingBox";
 import MessageBox from "../components/MessageBox";
 import ProductsCategories from "../components/ProductsCategories";
 import BestAudioGear from "../components/BestAudioGear";
-// import {allData} from '../App'
 
 const Headphones = (props) => {
   const dispatch = useDispatch();
   const headphonesList = useSelector((state) => state.headphonesList);
-
-  // const allDatahead = useSelector((state) => state.allData.data.headphones);
-  // allDatahead ? console.log(allDatahead) : console.log("noneee");
-  const { loading, error, headphones } = headphonesList;
-  console.log(headphonesList);
+  const allData = useSelector((state) => state.allData);
+  const { loading, error, data } = allData;
+  const headphones = data ? data.headphones : null;
+  // const { loading, error } = headphonesList;
+  // console.log(allData);
   useEffect(() => {
     dispatch(listheadphones());
   }, [dispatch]);

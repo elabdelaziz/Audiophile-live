@@ -19,7 +19,7 @@ function App() {
     dispatch(listAllData);
   }, [dispatch]);
   const allData = useSelector((state) => state.allData);
-  console.log(allData);
+  // console.log(allData);
   return (
     <div className="">
       <Router>

@@ -12,6 +12,10 @@ body {
   padding-top: 2rem;
 }
 
+ul li a {
+  letter-spacing: 2px;
+}
+
 ul li a:hover {
   color: #d87d4a;
   transition: 0.3s;
