@@ -56,3 +56,15 @@ section {
     flex-direction: initial;
   }
 }
+
+.number-input {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  --tw-bg-opacity: 1;
+  background-color: rgba(241, 241, 241, var(--tw-bg-opacity));
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}

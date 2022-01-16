@@ -1,7 +1,17 @@
 import React from "react";
 import Picture from "./Picture";
 import Button from "./Button";
-const BasicSection = ({ name, info, mobile, tablet, desktop, isreversed }) => {
+import { Link } from "react-router-dom";
+
+const BasicSection = ({
+  name,
+  route,
+  info,
+  mobile,
+  tablet,
+  desktop,
+  isreversed,
+}) => {
   return (
     <section className="container mx-auto flex flex-col lg:flex-row-reverse items-center lg:justify-around reverser">
       <div
@@ -13,7 +23,9 @@ const BasicSection = ({ name, info, mobile, tablet, desktop, isreversed }) => {
           {name}
         </h1>
         <p className="text-center lg:text-left mb-8 text-slate-600">{info}</p>
-        <Button background="bg-darkOrange" color="text-white" />
+        <Link to={`/products/${route}`}>
+          <Button background="bg-darkOrange" color="text-white" />
+        </Link>
       </div>
       <div className="overflow-hidden rounded-xl max-w-[327px] md:max-w-[540px]">
         <Picture desktopSrc={desktop} tabletSrc={tablet} mobileSrc={mobile} />

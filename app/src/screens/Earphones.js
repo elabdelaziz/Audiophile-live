@@ -23,6 +23,7 @@ const Earphones = () => {
           <BasicSection
             key={earphone.id}
             name={earphone.headerName}
+            route={earphone.id}
             info={earphone.info}
             mobile={earphone.mobile}
             tablet={earphone.tablet}

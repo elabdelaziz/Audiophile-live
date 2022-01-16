@@ -30,6 +30,7 @@ const Headphones = (props) => {
         headphones.map((headphone) => (
           <BasicSection
             key={headphone.id}
+            route={headphone.id}
             name={headphone.headerName}
             info={headphone.info}
             mobile={headphone.mobile}

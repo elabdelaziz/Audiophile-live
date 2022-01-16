@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import BestAudioGear from "../components/BestAudioGear";
 import Button from "../components/Button";
 import ProductsCategories from "../components/ProductsCategories";
+import { Link } from "react-router-dom";
 
 const HomeScreen = (props) => {
   return (
@@ -19,7 +20,9 @@ const HomeScreen = (props) => {
               Experience natural, lifelike audio and exceptional build quality
               made for the passionate music enthusiast.
             </p>
-            <Button background="bg-darkOrange" color="text-white" />
+            <Link to="/products/xx99-mark-two-headphones">
+              <Button background="bg-darkOrange" color="text-white" />
+            </Link>
           </div>
           {/* <div className=""></div> */}
         </div>
@@ -40,7 +43,9 @@ const HomeScreen = (props) => {
               Upgrade to premium speakers that are phenomenally built to deliver
               truly remarkable sound.
             </p>
-            <Button background="bg-black" color="text-white" />
+            <Link to="/products/zx9-speaker">
+              <Button background="bg-black" color="text-white" />
+            </Link>
           </div>
         </div>
       </section>
@@ -52,11 +57,13 @@ const HomeScreen = (props) => {
           className="bg-cover bg-right bg-[url('../public/assets/home/desktop/image-speaker-zx7.jpg')] container mx-auto rounded-xl h-[22rem] lg:pl-[10rem] flex flex-col justify-center lg:items-start items-center"
         >
           <h2 className="text-[2rem]">ZX7 SPEAKER</h2>
-          <Button
-            additional="border border-black border-solid mt-4"
-            background="bg-transparent"
-            color="text-black"
-          />
+          <Link to="/products/zx7-speaker">
+            <Button
+              additional="border border-black border-solid mt-4"
+              background="bg-transparent"
+              color="text-black"
+            />
+          </Link>
         </div>
       </section>
       <section className="">
@@ -72,11 +79,13 @@ const HomeScreen = (props) => {
             <h2 className="text-[1rem] text-center lg:text-[1.5rem] font-bold">
               YX1 WIRELESS EARPHONES
             </h2>
-            <Button
-              additional="border border-black border-solid mt-4"
-              background="bg-transparent"
-              color="text-black"
-            />
+            <Link to="/products/yx1-earphones">
+              <Button
+                additional="border border-black border-solid mt-4"
+                background="bg-transparent"
+                color="text-black"
+              />
+            </Link>
           </div>
         </div>
       </section>

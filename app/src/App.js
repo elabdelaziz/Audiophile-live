@@ -1,8 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { welcomeAction } from "./actions/welcomeAction";
 import { BrowserRouter as Router, Link, Route, Routes } from "react-router-dom";
-// import logo from "./logo.svg";
 import { FaUser } from "react-icons/fa";
 import { FiShoppingCart } from "react-icons/fi";
 import HomeScreen from "./screens/HomeScreen";
@@ -11,8 +10,17 @@ import Headphones from "./screens/Headphones";
 import Speakers from "./screens/Speakers";
 import Earphones from "./screens/Earphones";
 import { listAllData } from "./actions/shared";
+import ProductPage from "./screens/ProductPage";
+import { GiHamburgerMenu } from "react-icons/gi";
+import ProductsCategories from "./components/ProductsCategories";
+
+import { AiFillCloseCircle } from "react-icons/ai";
 
 function App() {
+  const [isClicked, changeClicked] = useState(false);
+  const handleNavDisplay = () => {
+    changeClicked(!isClicked);
+  };
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(welcomeAction());
@@ -23,8 +31,29 @@ function App() {
   return (
     <div className="">
       <Router>
-        <header className="absolute w-full z-20 text-white">
-          <nav className="flex items-center justify-between md:justify-around py-8 container mx-auto text-sm font-medium">
+        <header className="absolute w-full z-20 text-white bg-[#191919]">
+          <nav className="flex items-center justify-between px-0 py-8 container mx-auto text-sm font-medium border-b-[1px] border-opacity-20">
+            <button
+              onClick={handleNavDisplay}
+              className={`${
+                isClicked ? "hidden" : "block"
+              } text-[20px] lg:hidden`}
+            >
+              <GiHamburgerMenu />
+            </button>
+            <button
+              onClick={handleNavDisplay}
+              className={`${isClicked ? "block" : "hidden"} text-[20px]`}
+            >
+              <AiFillCloseCircle />
+            </button>
+            <div
+              className={`${
+                isClicked ? "block" : "hidden"
+              } w-[100%] duration-300 absolute block left-0 top-24 bg-white text-black rounded-xl `}
+            >
+              <ProductsCategories />
+            </div>
             <Link to="/">
               <img
                 className="w-20 md:w-40 md:text-xl"
@@ -32,7 +61,7 @@ function App() {
                 alt=""
               ></img>
             </Link>
-            <ul className="uppercase md:flex gap-10 mx-auto hidden md:visible">
+            <ul className="uppercase lg:flex gap-10 mx-auto hidden">
               <NavElements />
             </ul>
             <div className="flex gap-4 items-center space-x-2 md:text-lg justify-between">
@@ -48,6 +77,11 @@ function App() {
               </button>
             </div>
           </nav>
+          <div
+            className={`${
+              isClicked ? "block" : "hidden"
+            } w-[100vw] fixed h-[100vh] top-0 bg-black -z-10 opacity-40 `}
+          ></div>
         </header>
         <main>
           <Routes>
@@ -55,6 +89,7 @@ function App() {
             <Route path="/headphones" element={<Headphones />} />
             <Route path="/speakers" element={<Speakers />} />
             <Route path="/earphones" element={<Earphones />} />
+            <Route path="/products/:id" element={<ProductPage />} />
           </Routes>
         </main>
         <footer className="bg-black text-center md:text-left md:px-8 md:py-12 w-full mb-0 mt-8 clear-both left-0 bottom-0 right-0">

@@ -23,6 +23,7 @@ const Speakers = () => {
           <BasicSection
             key={speaker.id}
             name={speaker.headerName}
+            route={speaker.id}
             info={speaker.info}
             mobile={speaker.mobile}
             tablet={speaker.tablet}

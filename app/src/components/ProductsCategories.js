@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { listCategories } from "../actions/categoriesActions";
 import LoadingBox from "./LoadingBox";
 import MessageBox from "./MessageBox";
@@ -32,9 +33,11 @@ const ProductsCategories = (props) => {
                 alt=""
               ></img>
               <h3 className="font-bold">{category.name}</h3>
-              <button className="m-4 text-gray-500 font-semibold text-sm button-three ">
-                SHOP
-              </button>
+              <Link to={category.name.toLowerCase()}>
+                <button className="m-4 text-gray-500 font-semibold text-sm button-three ">
+                  SHOP
+                </button>
+              </Link>
             </div>
           ))}
         </div>
