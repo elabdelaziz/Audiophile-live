@@ -1,10 +1,17 @@
 import express from "express";
 import { data, products } from "./data.js";
-
+import path from "path";
 const app = express();
 
-app.use(express.static("public"));
+const __dirname = path.resolve();
+// console.log(__dirname);
 
+app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "/app/build")));
+// app.get("*", function (req, res) {
+//   const index = path.join(__dirname, "build", "index.html");
+//   res.sendFile(index);
+// });
 app.get("/api/products/:id", (req, res) => {
   // console.log(req.params.id);
   const keys = Object.keys(products);
