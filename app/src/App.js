@@ -32,7 +32,7 @@ function App() {
     <div className="">
       <Router>
         <header className="absolute w-full z-20 text-white bg-[#191919]">
-          <nav className="flex items-center justify-between px-0 py-8 container mx-auto text-sm font-medium border-b-[1px] border-opacity-20">
+          <nav className="flex items-center justify-between md:px-0 py-8 container mx-auto text-sm font-medium border-b-[1px] border-opacity-20">
             <button
               onClick={handleNavDisplay}
               className={`${
@@ -52,7 +52,7 @@ function App() {
                 isClicked ? "block" : "hidden"
               } w-[100%] duration-300 absolute block left-0 top-24 bg-white text-black rounded-xl `}
             >
-              <ProductsCategories />
+              <ProductsCategories changeClicked={changeClicked} />
             </div>
             <Link to="/">
               <img

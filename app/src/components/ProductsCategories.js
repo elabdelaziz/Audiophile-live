@@ -6,6 +6,10 @@ import LoadingBox from "./LoadingBox";
 import MessageBox from "./MessageBox";
 
 const ProductsCategories = (props) => {
+  const toggleMenu = () => {
+    props.changeClicked(false);
+  };
+
   const dispatch = useDispatch();
   const categoryList = useSelector((state) => state.categoryList);
   const { loading, error, categories } = categoryList;
@@ -34,7 +38,10 @@ const ProductsCategories = (props) => {
               ></img>
               <h3 className="font-bold">{category.name}</h3>
               <Link to={category.name.toLowerCase()}>
-                <button className="m-4 text-gray-500 font-semibold text-sm button-three ">
+                <button
+                  onClick={toggleMenu}
+                  className="m-4 text-gray-500 font-semibold text-sm button-three "
+                >
                   SHOP
                 </button>
               </Link>

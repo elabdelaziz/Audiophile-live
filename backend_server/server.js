@@ -4,7 +4,6 @@ import path from "path";
 const app = express();
 
 const __dirname = path.resolve();
-// console.log(__dirname);
 
 app.use(express.static("public"));
 app.use(express.static(path.join(__dirname, "/app/build")));
@@ -13,11 +12,9 @@ app.use(express.static(path.join(__dirname, "/app/build")));
 //   res.sendFile(index);
 // });
 app.get("/api/products/:id", (req, res) => {
-  // console.log(req.params.id);
   const keys = Object.keys(products);
   const productKey = Object.keys(products).find((key) => key === req.params.id);
   const product = products[productKey];
-  // console.log(products[product]);
   if (product) {
     res.send(product);
   } else {
