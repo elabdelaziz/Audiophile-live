@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { welcomeAction } from "./actions/welcomeAction";
 import { BrowserRouter as Router, Link, Route, Routes } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
@@ -26,12 +26,11 @@ function App() {
     dispatch(welcomeAction());
     dispatch(listAllData);
   }, [dispatch]);
-  const allData = useSelector((state) => state.allData);
-  // console.log(allData);
+
   return (
     <div className="">
       <Router>
-        <header className="absolute w-full z-20 text-white bg-[#191919]">
+        <header className="absolute w-full z-20 text-white md:px-[4rem] bg-[#191919]">
           <nav className="flex items-center justify-between md:px-0 py-8 container mx-auto text-sm font-medium border-b-[1px] border-opacity-20">
             <button
               onClick={handleNavDisplay}

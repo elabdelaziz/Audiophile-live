@@ -4,14 +4,14 @@ import {
   CATEGORY_LIST_FAIL,
 } from "../constants/categoryListConstants";
 import Axios from "axios";
+import { data } from "../data";
 
 export const listCategories = () => async (dispatch) => {
   dispatch({
     type: CATEGORY_LIST_REQUEST,
   });
   try {
-    const { data } = await Axios.get("/api/categories");
-    dispatch({ type: CATEGORY_LIST_SUCCESS, payload: data });
+    dispatch({ type: CATEGORY_LIST_SUCCESS, payload: data.categories });
   } catch (error) {
     dispatch({ type: CATEGORY_LIST_FAIL, payload: error.message });
   }
